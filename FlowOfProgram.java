@@ -93,33 +93,16 @@ class FlowOfProgram
                 System.out.println("sum until input X");
                 int sum=0;
             
-                while(true)
-                {
-                    /*String z= sc.next();
-                    if(z.trim().charAt(0)>='0' && z.trim().charAt(0)<='9')
-                    {
-                        sum+=Integer.parseInt(z);
-
-                    }
-                    else if(z.trim().charAt(0)=='X')
-                    {
-                        
-                        System.out.println(sum);
-                        break;
-                    }*/
-                    String str= sc.next();
-                    if(str.equals("X"))
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        int num= Integer.parseInt(str);
-                        sum+=num;
-                    }
-                }
+                while (true) {
+               String number = sc.next();
+                   if((number.trim().charAt(0)>='0'&&number.trim().charAt(0)<='9')||((number.trim().charAt(0)=='-')&&(number.trim().charAt(1)>='0'&&number.trim().charAt(1)<='9'))){
+                    sum = sum + Integer.parseInt(number);
+                   }
+             if (number.trim().charAt(0) == 'x' || number.trim().charAt(0)== 'X') {
                     System.out.println(sum);
-                 
+                    break;
+                }
+            }
                 break;
             case '0':
                 break;
